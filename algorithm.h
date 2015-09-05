@@ -122,8 +122,6 @@ void quick_sort(const vector<T>& input, vector<T>& output)
 		// add new pair node to back
 		if(lt.size()>0)
 			q.push(lt);
-		if(rt.size()>0)
-			q.push(rt);
 		if(ct.size()>0)
 		{
 			int ct_size = ct.size();
@@ -135,6 +133,8 @@ void quick_sort(const vector<T>& input, vector<T>& output)
 				q.push(ct_v);
 			}
 		}
+		if(rt.size()>0)
+			q.push(rt);
 	}
 
 	// add to output
