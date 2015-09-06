@@ -39,14 +39,16 @@ T get_middle(const vector<T>& input)
 
 		for(int i=0;i<SAMPLE_SIZE;i++)
 			middle += input[rand()%n];
+		middle /= SAMPLE_SIZE;
 	}
 	else
 	{
 		for(int i=0;i<n;i++)
 			middle += input[i];
+		middle /= n;
 	}
 
-	return middle/n;
+	return middle;
 }	
 ;
 
@@ -56,6 +58,7 @@ void quick_sort(const vector<T>& input, vector<T>& output)
 	int size = input.size();
 	
 	cout<<endl<<"####### INPUT  ########"<<endl;
+	cout<<"TOTAL : "<<size<<endl;
 
 	for(int i=0; i<size; i++)
 		cout<<input[i]<<"\t";
@@ -96,9 +99,15 @@ void quick_sort(const vector<T>& input, vector<T>& output)
 			continue;
 		}
 
+		// if it is an sorted one
+		if(head.size()==1)
+		{
+			q.push(head);
+			continue;
+		}
+
 		// check if the size
-		if(head.size()>1)
-			meet_size_more_than_1 ++;
+		meet_size_more_than_1 ++;
 
 		T middle = get_middle(head);
 		int h_size = head.size();
