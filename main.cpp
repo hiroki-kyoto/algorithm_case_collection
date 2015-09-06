@@ -1,8 +1,7 @@
 // main.cpp
 #include "algorithm.h"
 #include <iostream>
-#include <string>
-#include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -11,18 +10,31 @@ int main(int argc, const char** argv)
 {
 	vector<int> input;
 	vector<int> output;
-	// in order to convert str to int, convert str to stream is required
-	stringstream strm;
+
+	// read the input data file
+	ifstream ifs;
+
+	if(argc<2)
+		cout<<endl<<" Error: \n\tUsage: [program name] [random integer data filename]"<<endl;
+
+	ifs.open(argv[1]);
+	
 	int number;
-	
-	for(int i=1; i<argc; i++)
+	input.clear();
+
+	char chr;
+	ifs.get(chr);
+
+	while(chr!='$')
 	{
-		strm.clear();
-		strm.str(argv[i]);
-		strm>>number;
+		ifs>>number;
 		input.push_back(number);
+		ifs.get(chr);
 	}
-	
+
+	ifs.close();
+
+	// applying the algorithm
 	quick_sort(input, output);
 	// print output
 	vector<int>::iterator iter = output.begin();
