@@ -158,11 +158,14 @@ void t_destroy(tree *t)
                         {
 				cout<<__LINE__<<endl;
                                 f = f->parent; // roll up
-                                delete[] (node*)f->chd; // free children
+                                delete[] (node*)f->chd; 
                                 count -= f->chn; // update count
                                 
                                 // what if it is the last child ?
-                                if(f==f->parent->chd+(f->parent->chn-1))
+                                if(
+									f==f->parent->chd+(
+										f->parent->chn-1)
+								)
                                         continue;
 				else
 				{
