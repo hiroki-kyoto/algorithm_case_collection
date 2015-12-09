@@ -99,8 +99,24 @@ p_node net::addNode(t_data data, t_flag flag)
 {
 	p_node node_ptr;
 	node_ptr = new node(data, flag);
+	nodes.push_back(node_ptr);
 	return node_ptr;
 }
 
+void net::delNode(p_node node_ptr)
+{
+	vector<node>::iterator itr;
+	itr = nodes.begin();
+	while(itr!=nodes.end())
+	{
+		if(*itr==node_ptr)
+		{
+			nodes.erase(itr);
+			break;
+		}
+		itr++;
+	}
+	delete node_ptr;
+}
 
 };
