@@ -1,4 +1,8 @@
-all: t_network.app t_vector.app
+all: t_network.app t_vector.app t_tree.app
+t_tree.app: t_tree.o
+	g++ -o t_tree.app t_tree.o
+t_tree.o: t_tree.cpp
+
 t_network.app: t_network.o
 	g++ -o t_network.app t_network.o
 t_network.o: t_network.cpp
@@ -16,3 +20,4 @@ clean :
 install:
 	./t_network.app
 	./t_vector.app
+	./t_tree.app
