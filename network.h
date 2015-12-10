@@ -88,7 +88,7 @@ void dump_conn(p_conn conn_ptr)
 **************************************************/
 class net
 {
-private:
+protected:
 	vector<p_node> nodes;
 	vector<p_conn> conns;
 public:
@@ -142,6 +142,7 @@ net::~net()
 
 p_node net::addNode(t_data data, t_flag flag)
 {
+	//cout<<"adding node"<<endl;
 	p_node node_ptr;
 	node_ptr = new node;
 	node_ptr->data = data;
@@ -171,6 +172,7 @@ p_conn net::addConn(
 	p_node tail, 
 	t_weit weit)
 {
+	//cout<<"add connection"<<endl;
 	p_conn conn_ptr;
 	conn_ptr = new conn;
 	conn_ptr->head = head;

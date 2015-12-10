@@ -5,10 +5,8 @@ namespace tpl
 
 class tree:public net
 {
-private:
+protected:
 	p_node root;
-	vector<p_node> nodes;
-	vector<p_conn> conns;
 public:
 	void setRoot(p_node root);
 	p_node getRoot();
@@ -48,10 +46,8 @@ void tree::getChildren(p_node parent, vector<p_node> &children)
 	// list all children under parent node
 	vector<p_conn>::iterator itr;
 	for(itr=conns.begin(); itr!=conns.end(); itr++)
-	{
 		if((*itr)->head==parent)
 			children.push_back((*itr)->tail);
-	}
 }
 
 p_node tree::getParent(p_node child)
@@ -81,7 +77,7 @@ bool tree::isLeaf(p_node leaf)
 {
 	vector<p_conn>::iterator itr;
 	itr = conns.begin();
-	for(; itr!=conns.end(); ++itr)
+	for(; itr!=conns.end(); itr++)
 		if((*itr)->head==leaf)
 			return false;
 	return true;

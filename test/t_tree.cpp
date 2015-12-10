@@ -19,7 +19,16 @@ int main()
 	mytree.appendChild(nodes[1], nodes[4]);
 	mytree.appendChild(nodes[2], nodes[5]);
 	mytree.appendChild(nodes[2], nodes[6]);
-	cout<<mytree.isLeaf(nodes[1]);
-	cout<<mytree.isLeaf(nodes[4]);
+	cout<<mytree.getParent(nodes[0])<<endl;
+	cout<<mytree.getParent(nodes[1])<<endl;
+	cout<<mytree.getParent(nodes[4])<<endl;
+	cout<<mytree.isLeaf(nodes[1])<<endl;
+	cout<<mytree.isLeaf(nodes[4])<<endl;
+	vector<p_node> children;
+	mytree.getChildren(nodes[0], children);
+	vector<p_node>::iterator itr;
+	itr = children.begin();
+	for(; itr!=children.end(); itr++)
+		cout<<*(int*)(*itr)->data<<"\t";
 	return 0;
 }
