@@ -1,0 +1,34 @@
+chao@ubuntu:~/workspace/algorithm$ make pso.app 
+g++    -c -o particle_swarm_optimization.o particle_swarm_optimization.cpp
+g++ -o pso.app particle_swarm_optimization.o
+chao@ubuntu:~/workspace/algorithm$ make pso
+./pso.app
+0.3856
+WHEN X= -0.1898F(X) REACHES ITS MAX = 3.19264
+WHEN X= 3.5209F(X_ REACHES ITS MIN = -22.3778
+chao@ubuntu:~/workspace/algorithm$ make pso
+./pso.app
+0.6973
+WHEN X= -0.1877F(X) REACHES ITS MAX = 3.19263
+WHEN X= 3.5223F(X_ REACHES ITS MIN = -22.3778
+chao@ubuntu:~/workspace/algorithm$ make pso
+./pso.app
+0.1487
+WHEN X= -0.1898F(X) REACHES ITS MAX = 3.19264
+WHEN X= 3.52506F(X_ REACHES ITS MIN = -22.3778
+chao@ubuntu:~/workspace/algorithm$ make pso
+./pso.app
+0.0246
+WHEN X= -0.1877F(X) REACHES ITS MAX = 3.19263
+WHEN X= 3.5209F(X_ REACHES ITS MIN = -22.3778
+chao@ubuntu:~/workspace/algorithm$ make pso
+./pso.app
+0.8
+WHEN X= -0.188077F(X) REACHES ITS MAX = 3.19264
+WHEN X= 3.5231F(X_ REACHES ITS MIN = -22.3778
+chao@ubuntu:~/workspace/algorithm$ make pso
+./pso.app
+0.4009
+WHEN X= -0.1884F(X) REACHES ITS MAX = 3.19264
+WHEN X= 3.523F(X_ REACHES ITS MIN = -22.3778
+
