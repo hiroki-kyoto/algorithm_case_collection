@@ -37,3 +37,9 @@ test :
 	g++ -o rand_num_generator rand_num_generator.cpp
 	rand_num_generator rand_num.txt 100000
 	@make clean & clear & make & make check & make clean
+
+pso.app : particle_swarm_optimization.o
+	g++ -o pso.app particle_swarm_optimization.o
+particle_swarm_optimization.o : particle_swarm_optimization.cpp
+pso :
+	./pso.app
